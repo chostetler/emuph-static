@@ -99,28 +99,91 @@
     
     <p class="flavor">Each of these nine pirates has their own way of translating things.</p>
 <script>
-    function translatelingo(group){
-        var group_str = group.toString();
-        var input_str = document.getElementById("input".concat(group_str)).value;
+        function normalize(string) {
+            return string.toUpperCase().replace(/[^A-Z]/g, '');
+        }
 
-        document.getElementById("output".concat(group_str)).style.backgroundColor = "lightgray"
-        displayoutput(group_str, "...")
-        $.ajax({
-            type: "GET",
-            url: "/piratelingo",
-            data: {
-                group: group_str,
-                input: input_str
-            },
-            success: function(data) {
-                document.getElementById("output".concat(group_str)).style.backgroundColor = ""
-                displayoutput(group_str, data)
-            },
-        })
-    }
-    function displayoutput(group_str, content){
-        document.getElementById("output".concat(group_str)).innerHTML = content.concat('\u200b');
-    }
+        function translate1(string) {
+            string = normalize(string);
+            let length = string.length;
+            let secondHalf = string.slice(Math.ceil(length / 2));
+            return string + secondHalf;
+        }
+
+        function translate2(string) {
+            string = normalize(string);
+            return string.length === 0 ? '' : string.slice(1) + string[0] + 'EFF';
+        }
+
+        function translate3(string) {
+            string = normalize(string);
+            return string.replace(/(.)\1+/g, '$1');
+        }
+
+        function translate4(string) {
+            string = normalize(string);
+            return string.replace(/[A-Z]/g, char => String.fromCharCode(((char.charCodeAt(0) - 65 + 13) % 26) + 65));
+        }
+
+        function translate5(string) {
+            string = normalize(string);
+            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const message = 'AHOYMEMATEYSNOANSWERBEHERE';
+            let result = '';
+            for (let char of string) {
+                let index = alphabet.indexOf(char);
+                result += message[index] || '';
+            }
+            return normalize(result);
+        }
+
+        function translate6(string) {
+            string = normalize(string);
+            return string.length <= 2 ? '' : string.slice(1, -1);
+        }
+
+        function translate7(string) {
+            string = normalize(string);
+            return string.length <= 1 ? string : string.slice(-2) + string.slice(0, -2);
+        }
+
+        function translate8(string) {
+            return normalize(string).replace(/[N-Z]/g, '');
+        }
+
+        function translate9(string) {
+            string = normalize(string);
+            let result = '';
+            for (let i = 0; i < string.length; i += 2) {
+                if (i + 1 < string.length) {
+                    result += string[i + 1] + string[i];
+                } else {
+                    result += string[i];
+                }
+            }
+            return result;
+        }
+
+        function runGroup(num, string) {
+            const functions = {
+                '1': translate5,
+                '2': string => translate3(translate4(translate4(string))),
+                '3': string => translate2(translate7(translate6(string))),
+                '4': string => translate2(translate6(translate7(string))),
+                '5': string => translate3(translate2(string)),
+                '6': string => translate4(translate1(string)),
+                '7': string => translate8(translate9(string)),
+                '8': string => translate1(translate1(translate1(string))),
+                '9': string => translate9(translate4(string))
+            };
+            return functions[num] ? functions[num](string) : 'Invalid group';
+        }
+
+        function translatelingo(group) {
+            const input = document.getElementById(`input${group}`).value;
+            const output = runGroup(group.toString(), input);
+            document.getElementById(`output${group}`).innerText = output;
+        }
 </script>
 
 <style>
