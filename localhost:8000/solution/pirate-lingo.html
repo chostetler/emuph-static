@@ -1,0 +1,247 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Pirate Lingo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="../static/css/skeleton.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.js"></script>
+    <script src="../static/js/tray.js"></script>
+    <meta property="og:title" content="EMU Puzzle Hunt" />
+    <meta property="og:description" content="Website for the 2021 EMU Puzzle Hunt competition" />
+    <meta property="og:url" content="https://emupuzzlehunt.com/" />
+    <meta property="og:image" content="https://emupuzzlehunt.com/static/images/Title.png" />
+    <meta name="author" content="Caleb Hostetler">
+    <meta name="publish_date" property="og:publish_date" content="2021-03-21T00:00:00-0600">
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    Home
+                </a>
+                <a href="../rules.html">
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    Story
+                </a>
+                
+                
+                <a class="selected-tab" href="../puzzles.html">
+                    Puzzles
+                </a>
+                <a href="../victory.html">
+                Runaround
+                </a>
+                
+                <a href="../teams.html">
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    FAQ
+                </a>
+                
+                
+                <a href="../archive.html">
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+<a href="../puzzle/pirate-lingo.html" class="btn">Back to the puzzle</a>
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <div class="content">
+        
+
+<style>
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.answers-used {
+    column-width: 350px;
+    white-space: pre;
+    font-family: monospace, monospace;
+}
+</style>
+
+<h1>
+    
+    Solution: Pirate Lingo
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer">YOHOHO</span></div>
+    
+</h1>
+
+<main>
+    <h4>
+        Written by
+        
+Caleb Hostetler
+
+    </h4>
+
+    
+    <p>Each one of the nine "pirates" has a transformation that they perform on the input text, which can be determined through trial and error:</p>
+<table>
+<thead>
+<tr>
+<th>Pirate</th>
+<th>Effect</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Take the second half of the string and append it to the end</td>
+<td>ABCDE -&gt; ABCDEDE</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Move the first letter to the end, then add EFF</td>
+<td>JBIG -&gt; BIGJEFF</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Replace double, triple, etc. with single letters</td>
+<td>BELLOW -&gt; BELOW</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Do a ROT13 cipher</td>
+<td>ABCDE -&gt; NOPQR</td>
+</tr>
+<tr>
+<td>5</td>
+<td>If all of the letters in the string were alphabetized, replace all instances of the first letter with A, the second with H, and so on, indexing into AHOYMEMATEYSNOBEANSWERHERE.</td>
+<td>ADNOYX -&gt; AHOYEM</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Remove first and last letters</td>
+<td>HELLO -&gt; ELL</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Shift the string to the right by two letters, moving the rightmost two letters to the front</td>
+<td>WAGON -&gt; ONWAG</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Remove letters from the second half of the alphabet (N-Z)</td>
+<td>SPEW -&gt; E</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Swap each pair of two letters</td>
+<td>ABACUS -&gt; BACASU</td>
+</tr>
+</tbody>
+</table>
+<p>Then performing the appropriate transformations on ANSWERIS gives us</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>ANSWERIS</td>
+</tr>
+<tr>
+<td>6</td>
+<td>NSWERI</td>
+</tr>
+<tr>
+<td>4</td>
+<td>AFJREV</td>
+</tr>
+<tr>
+<td>7</td>
+<td>EVAFJR</td>
+</tr>
+<tr>
+<td>2</td>
+<td>VAFJREEFF</td>
+</tr>
+<tr>
+<td>8</td>
+<td>AFJEEFF</td>
+</tr>
+<tr>
+<td>5</td>
+<td>AOYHHOO</td>
+</tr>
+<tr>
+<td>6</td>
+<td>OYHHO</td>
+</tr>
+<tr>
+<td>9</td>
+<td>YOHHO</td>
+</tr>
+<tr>
+<td>3</td>
+<td>YOHO</td>
+</tr>
+<tr>
+<td>1</td>
+<td><strong>YOHOHO</strong></td>
+</tr>
+</tbody>
+</table>
+
+    
+
+    
+    <hr>
+    <h4>Author&rsquo;s Notes</h4>
+    <p>This was probably my favorite puzzle out of all of them. I was so happy when I was able to get a reasonable set of rules that made a coherent answer.</p>
+    
+
+    
+
+    
+      
+</main>
+
+
+    </div>
+    <footer>
+        Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,329 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Lipschitz Boyz</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="../static/css/skeleton.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.js"></script>
+    <script src="../static/js/tray.js"></script>
+    <meta property="og:title" content="EMU Puzzle Hunt" />
+    <meta property="og:description" content="Website for the 2021 EMU Puzzle Hunt competition" />
+    <meta property="og:url" content="https://emupuzzlehunt.com/" />
+    <meta property="og:image" content="https://emupuzzlehunt.com/static/images/Title.png" />
+    <meta name="author" content="Caleb Hostetler">
+    <meta name="publish_date" property="og:publish_date" content="2021-03-21T00:00:00-0600">
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    Home
+                </a>
+                <a href="../rules.html">
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    Story
+                </a>
+                
+                
+                <a href="../puzzles.html">
+                    Puzzles
+                </a>
+                <a href="../victory.html">
+                Runaround
+                </a>
+                
+                <a class="selected-tab" href="../teams.html">
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    FAQ
+                </a>
+                
+                
+                <a href="../archive.html">
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <div class="content">
+        
+
+<style>
+.chart {
+    width: 100%;
+    height: 82px;
+    transform: scaleY(-1);
+    margin-bottom: 24px;
+}
+
+.baz {
+    fill: rgba(180, 160, 140, 0.3);
+}
+
+.area {
+    fill: rgb(180, 220, 150);
+}
+
+.bar {
+    stroke: rgba(248, 188, 78, 0.5);
+    stroke-width: 0.5%;
+    fill: none;
+}
+
+.meta {
+    font-style: italic;
+}
+
+.team-members {
+    margin-top: 24px;
+}
+
+@media (min-width: 550px) {
+    .team-members {
+        margin-top: 0;
+    }
+}
+
+.team-member-controls {
+    margin-top: 8px;
+    line-height: 36px;
+}
+
+.team-info-panel h4 {
+    margin-bottom: 0;
+}
+
+.free {
+    color: #aaa;
+}
+
+.free td:last-child:before {
+    content: "(";
+}
+
+.free td:last-child:after {
+    content: ")";
+}
+</style>
+
+<h1>Lipschitz Boyz</h1>
+
+<main>
+    <div class="team-info-panel">
+        <div class="row">
+            <div class="six columns">
+                <h4>Stats</h4>
+                <div class="stat-entry">Rank: <span class="stat-value">2</span></div>
+                <div class="stat-entry">Puzzles solved: <span class="stat-value">11</span></div>
+                
+            </div>
+            <div class="six columns">
+                <div class="team-members">
+                    <h4>Team Members:</h4>
+                    <div class="stat-entry">
+                        
+                        Silas Clymer, 
+                        
+                        Ike Esh, 
+                        
+                        Jonathan Reimer-Berg, 
+                        
+                        Jeremiah Yoder
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <svg class="chart" viewbox="0 0 676800.0 41" preserveAspectRatio="none">
+        <path d="M 0 0 L 676800.0 0 L 676800.0 41 L 0 41" class="baz"></path>
+        <path d="M 676800.0 0 L 0 0
+        
+        L 0.0 1
+        L 8085.035485 1
+        
+        L 8085.035485 2
+        L 26286.039809 2
+        
+        L 26286.039809 3
+        L 26426.349484 3
+        
+        L 26426.349484 4
+        L 66395.189147 4
+        
+        L 66395.189147 5
+        L 70621.602714 5
+        
+        L 70621.602714 6
+        L 89755.192701 6
+        
+        L 89755.192701 7
+        L 92248.976249 7
+        
+        L 92248.976249 8
+        L 92458.325942 8
+        
+        L 92458.325942 9
+        L 92997.118666 9
+        
+        L 92997.118666 10
+        L 93111.293699 10
+        
+        L 93111.293699 11
+        L 93148.06225 11
+        
+        L 93148.06225 12
+        L 676800.0 12
+        
+        " class="area"></path>
+        
+        <path d="M 92997.118666 0 L 92997.118666 41" class="bar"></path>
+        
+    </svg>
+    <table class="sortable gph-list-table">
+        <col style="width: 40%">
+        <col style="width: 10%">
+        <col style="width: 20%">
+        <col style="width: 10%">
+        <col style="width: 20%">
+        <tr>
+            <th>Puzzle</th>
+            <th>Incorrect guesses</th>
+            <th>Unlock time (EDT)</th>
+            <th>Time to solve</th>
+            <th>Solve time (EDT)</th>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Criss-Cross"><a href="../puzzle/criss-cross.html">Criss-Cross</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1616210096">Mar 19, 18:14</td>
+            <td sorttable_customkey="7188.999065">1h59m</td>
+            <td sorttable_customkey="1616217285">Mar 19, 20:14</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Street View"><a href="../puzzle/street-view.html">Street View</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1616210096">Mar 19, 18:14</td>
+            <td sorttable_customkey="25390.010767">7h3m</td>
+            <td sorttable_customkey="1616235486">Mar 20, 01:18</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="How Well Do You Know EMU Staff?"><a href="../puzzle/how-well-do-you-know-emu-staff.html">How Well Do You Know EMU Staff?</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1616210096">Mar 19, 18:14</td>
+            <td sorttable_customkey="25530.324059">7h5m</td>
+            <td sorttable_customkey="1616235626">Mar 20, 01:20</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Pirate Lingo"><a href="../puzzle/pirate-lingo.html">Pirate Lingo</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1616210096">Mar 19, 18:14</td>
+            <td sorttable_customkey="65499.167716">18h11m</td>
+            <td sorttable_customkey="1616275595">Mar 20, 12:26</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Spectrogram"><a href="../puzzle/spectrogram.html">Spectrogram</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1616217285">Mar 19, 20:14</td>
+            <td sorttable_customkey="62536.335125">17h22m</td>
+            <td sorttable_customkey="1616279821">Mar 20, 13:37</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Reassemblage"><a href="../puzzle/reassemblage.html">Reassemblage</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1616217285">Mar 19, 20:14</td>
+            <td sorttable_customkey="81669.919936">22h41m</td>
+            <td sorttable_customkey="1616298955">Mar 20, 18:55</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Paperboy"><a href="../puzzle/paperboy.html">Paperboy</a></td>
+            <td>2</td>
+            <td sorttable_customkey="1616210096">Mar 19, 18:14</td>
+            <td sorttable_customkey="91352.94333">25h22m</td>
+            <td sorttable_customkey="1616301448">Mar 20, 19:37</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Love Letter"><a href="../puzzle/love-letter.html">Love Letter</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1616235486">Mar 20, 01:18</td>
+            <td sorttable_customkey="66171.989343">18h22m</td>
+            <td sorttable_customkey="1616301658">Mar 20, 19:40</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="[META] Ring of Fire" class="meta"><a href="../puzzle/ring-of-fire.html">[META] Ring of Fire</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1616275595">Mar 20, 12:26</td>
+            <td sorttable_customkey="26601.710074">7h23m</td>
+            <td sorttable_customkey="1616302197">Mar 20, 19:49</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="The Enchanted Grid"><a href="../puzzle/the-enchanted-grid.html">The Enchanted Grid</a></td>
+            <td>2</td>
+            <td sorttable_customkey="1616235626">Mar 20, 01:20</td>
+            <td sorttable_customkey="66684.513488">18h31m</td>
+            <td sorttable_customkey="1616302311">Mar 20, 19:51</td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Letters"><a href="../puzzle/letters.html">Letters</a></td>
+            <td>2</td>
+            <td sorttable_customkey="1616235626">Mar 20, 01:20</td>
+            <td sorttable_customkey="66721.277906">18h32m</td>
+            <td sorttable_customkey="1616302348">Mar 20, 19:52</td>
+        </tr>
+        
+    </table>
+    
+    
+</main>
+
+
+    </div>
+    <footer>
+        Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>
+    </footer>
+    
+</body>
+</html>

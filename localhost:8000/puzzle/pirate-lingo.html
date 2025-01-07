@@ -1,0 +1,160 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Pirate Lingo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="../static/css/skeleton.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.js"></script>
+    <script src="../static/js/tray.js"></script>
+    <meta property="og:title" content="EMU Puzzle Hunt" />
+    <meta property="og:description" content="Website for the 2021 EMU Puzzle Hunt competition" />
+    <meta property="og:url" content="https://emupuzzlehunt.com/" />
+    <meta property="og:image" content="https://emupuzzlehunt.com/static/images/Title.png" />
+    <meta name="author" content="Caleb Hostetler">
+    <meta name="publish_date" property="og:publish_date" content="2021-03-21T00:00:00-0600">
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.ico" type="image/vnd.microsoft.icon">
+    
+</head>
+<body>
+    
+    <nav>
+        <span class="tray">
+            <div class="top-tabs">
+                <a href="../index.html">
+                    Home
+                </a>
+                <a href="../rules.html">
+                    Rules
+                </a>
+                
+                <a href="../story.html">
+                    Story
+                </a>
+                
+                
+                <a class="selected-tab" href="../puzzles.html">
+                    Puzzles
+                </a>
+                <a href="../victory.html">
+                Runaround
+                </a>
+                
+                <a href="../teams.html">
+                    Teams
+                </a>
+                <a href="../faq.html">
+                    FAQ
+                </a>
+                
+                
+                <a href="../archive.html">
+                    Archive
+                </a>
+            </div>
+            <div class="top-left-actions">
+                
+
+
+
+<a href="../post-hunt-solve/pirate-lingo.html" class="btn">Check your answer spoiler-free</a>
+
+
+<a href="../solution/pirate-lingo.html" class="btn">View solution</a>
+<a href="../stats/pirate-lingo.html" class="btn">Stats</a>
+
+
+
+            </div>
+        </span>
+        <div class="top-right-actions">
+        
+        </div>
+    </nav>
+    
+    <div class="content">
+        
+
+<h1>
+    
+    Pirate Lingo
+    
+    
+</h1>
+
+<main>
+    
+    <p class="flavor">Each of these nine pirates has their own way of translating things.</p>
+<script>
+    function translatelingo(group){
+        var group_str = group.toString();
+        var input_str = document.getElementById("input".concat(group_str)).value;
+
+        document.getElementById("output".concat(group_str)).style.backgroundColor = "lightgray"
+        displayoutput(group_str, "...")
+        $.ajax({
+            type: "GET",
+            url: "/piratelingo",
+            data: {
+                group: group_str,
+                input: input_str
+            },
+            success: function(data) {
+                document.getElementById("output".concat(group_str)).style.backgroundColor = ""
+                displayoutput(group_str, data)
+            },
+        })
+    }
+    function displayoutput(group_str, content){
+        document.getElementById("output".concat(group_str)).innerHTML = content.concat('\u200b');
+    }
+</script>
+
+<style>
+    span:empty:before {
+        content: "\200B"; 
+    }
+</style>
+
+<div style="width:100%; display:inline-flex; justify-content:space-between; align-items:baseline"><input type="text" id="input1" style="max-width: 20%;"><span style="text-align:center; text-justify:inter-word; width: 25%;">&#x2192 5 &#x2192</span><span id="output1" style="border:1px solid black; text-align:center; min-width:20%; padding:5px"></span><button onclick="translatelingo(1)">Translate</button></div>
+
+<div style="width:100%; display:inline-flex; justify-content:space-between; align-items:baseline"><input type="text" id="input2" style="max-width: 20%;"><span style="text-align:center; text-justify:inter-word; width: 25%;">&#x2192 4 &#x2192 4 &#x2192 3 &#x2192</span><span id="output2" style="border:1px solid black; text-align:center; min-width:20%; padding:5px"></span><button onclick="translatelingo(2)">Translate</button></div>
+
+<div style="width:100%; display:inline-flex; justify-content:space-between; align-items:baseline"><input type="text" id="input3" style="max-width: 20%;"><span style="text-align:center; text-justify:inter-word; width: 25%;">&#x2192 6 &#x2192 7 &#x2192 2 &#x2192</span><span id="output3" style="border:1px solid black; text-align:center; min-width:20%; padding:5px"></span><button onclick="translatelingo(3)">Translate</button></div>
+
+<div style="width:100%; display:inline-flex; justify-content:space-between; align-items:baseline"><input type="text" id="input4" style="max-width: 20%;"><span style="text-align:center; text-justify:inter-word; width: 25%;">&#x2192 7 &#x2192 6 &#x2192 2 &#x2192</span><span id="output4" style="border:1px solid black; text-align:center; min-width:20%; padding:5px"></span><button onclick="translatelingo(4)">Translate</button></div>
+
+<div style="width:100%; display:inline-flex; justify-content:space-between; align-items:baseline"><input type="text" id="input5" style="max-width: 20%;"><span style="text-align:center; text-justify:inter-word; width: 25%;">&#x2192 2 &#x2192 3 &#x2192 </span><span id="output5" style="border:1px solid black; text-align:center; min-width:20%; padding:5px"></span><button onclick="translatelingo(5)">Translate</button></div>
+
+<div style="width:100%; display:inline-flex; justify-content:space-between; align-items:baseline"><input type="text" id="input6" style="max-width: 20%;"><span style="text-align:center; text-justify:inter-word; width: 25%;">&#x2192 1 &#x2192 4 &#x2192 </span><span id="output6" style="border:1px solid black; text-align:center; min-width:20%; padding:5px"></span><button onclick="translatelingo(6)">Translate</button></div>
+
+<div style="width:100%; display:inline-flex; justify-content:space-between; align-items:baseline"><input type="text" id="input7" style="max-width: 20%;"><span style="text-align:center; text-justify:inter-word; width: 25%;">&#x2192 9 &#x2192 8 &#x2192 </span><span id="output7" style="border:1px solid black; text-align:center; min-width:20%; padding:5px"></span><button onclick="translatelingo(7)">Translate</button></div>
+
+<div style="width:100%; display:inline-flex; justify-content:space-between; align-items:baseline"><input type="text" id="input8" style="max-width: 20%;"><span style="text-align:center; text-justify:inter-word; width: 25%;">&#x2192 1 &#x2192 1 &#x2192 1 &#x2192</span><span id="output8" style="border:1px solid black; text-align:center; min-width:20%; padding:5px"></span><button onclick="translatelingo(8)">Translate</button></div>
+
+<div style="width:100%; display:inline-flex; justify-content:space-between; align-items:baseline"><input type="text" id="input9" style="max-width: 20%;"><span style="text-align:center; text-justify:inter-word; width: 25%;">&#x2192 4 &#x2192 9 &#x2192 </span><span id="output9" style="border:1px solid black; text-align:center; min-width:20%; padding:5px"></span><button onclick="translatelingo(9)">Translate</button></div>
+
+<p><hr><div style="width:100%; display:inline-flex; justify-content:space-between; align-items:baseline"><span style="text-align:center; border:1px solid black; padding:5px; background-color:white">ANSWERIS</span><span style="text-align:center; text-justify:inter-word">&#x2192; 6 &#x2192; 4 &#x2192; 7 &#x2192; 2 &#x2192; 8 &#x2192; 5 &#x2192; 6 &#x2192; 9 &#x2192; 3 &#x2192; 1 &#x2192;</span><span style="border:1px solid black; text-align:center; min-width:20%; background-color:greenyellow">??????</span></div></div></p>
+</main>
+
+
+    </div>
+    <footer>
+        Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>
+    </footer>
+    
+</body>
+</html>
